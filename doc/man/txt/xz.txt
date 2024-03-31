@@ -971,7 +971,6 @@ OPTIONS
        --powerpc[=options]
        --ia64[=options]
        --sparc[=options]
-       --riscv[=options]
               Add  a branch/call/jump (BCJ) filter to the filter chain.  These
               filters can be used only as a  non-last  filter  in  the  filter
               chain.
@@ -1012,8 +1011,8 @@ OPTIONS
                      ARM             4
                      ARM-Thumb       2
                      ARM64           4       4096-byte alignment is best
-
                      PowerPC         4       Big endian only
+
                      IA-64          16       Itanium
                      SPARC           4
                      RISC-V          2
@@ -1680,4 +1679,4 @@ SEE ALSO
 
 
 
-Tukaani                           2024-02-25                             XZ(1)
+Tukaani                           2024-02-13                             XZ(1)

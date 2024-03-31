@@ -93,20 +93,19 @@ check_PROGRAMS = create_compress_files$(EXEEXT) test_check$(EXEEXT) \
 	test_block_header$(EXEEXT) test_index$(EXEEXT) \
 	test_index_hash$(EXEEXT) test_bcj_exact_size$(EXEEXT) \
 	test_memlimit$(EXEEXT) test_lzip_decoder$(EXEEXT) \
-	test_vli$(EXEEXT) $(am__EXEEXT_1)
+	test_vli$(EXEEXT) test_microlzma$(EXEEXT)
 TESTS = test_check$(EXEEXT) test_hardware$(EXEEXT) \
 	test_stream_flags$(EXEEXT) test_filter_flags$(EXEEXT) \
 	test_filter_str$(EXEEXT) test_block_header$(EXEEXT) \
 	test_index$(EXEEXT) test_index_hash$(EXEEXT) \
 	test_bcj_exact_size$(EXEEXT) test_memlimit$(EXEEXT) \
-	test_lzip_decoder$(EXEEXT) test_vli$(EXEEXT) test_files.sh \
-	test_suffix.sh test_compress_prepared_bcj_sparc \
+	test_lzip_decoder$(EXEEXT) test_vli$(EXEEXT) \
+	test_microlzma$(EXEEXT) test_files.sh test_suffix.sh \
+	test_compress_prepared_bcj_sparc \
 	test_compress_prepared_bcj_x86 test_compress_generated_abc \
 	test_compress_generated_random test_compress_generated_text \
-	$(am__EXEEXT_1) $(am__append_3)
-@COND_MICROLZMA_TRUE@am__append_1 = test_microlzma
-@COND_MICROLZMA_TRUE@am__append_2 = test_microlzma
-@COND_SCRIPTS_TRUE@am__append_3 = test_scripts.sh
+	$(am__append_1)
+@COND_SCRIPTS_TRUE@am__append_1 = test_scripts.sh
 subdir = tests
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/ax_pthread.m4 \
@@ -133,7 +132,6 @@ mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
-@COND_MICROLZMA_TRUE@am__EXEEXT_1 = test_microlzma$(EXEEXT)
 create_compress_files_SOURCES = create_compress_files.c
 create_compress_files_OBJECTS = create_compress_files.$(OBJEXT)
 create_compress_files_LDADD = $(LDADD)
@@ -1106,6 +1104,13 @@ test_vli.log: test_vli$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test_microlzma.log: test_microlzma$(EXEEXT)
+	@p='test_microlzma$(EXEEXT)'; \
+	b='test_microlzma'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test_files.sh.log: test_files.sh
 	@p='test_files.sh'; \
 	b='test_files.sh'; \
@@ -1151,13 +1156,6 @@ test_compress_generated_random.log: test_compress_generated_random
 test_compress_generated_text.log: test_compress_generated_text
 	@p='test_compress_generated_text'; \
 	b='test_compress_generated_text'; \
-	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
-	--log-file $$b.log --trs-file $$b.trs \
-	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
-	"$$tst" $(AM_TESTS_FD_REDIRECT)
-test_microlzma.log: test_microlzma$(EXEEXT)
-	@p='test_microlzma$(EXEEXT)'; \
-	b='test_microlzma'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
