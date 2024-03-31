@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xz 5.6.0-pre2\n"
 "Report-Msgid-Bugs-To: xz@tukaani.org\n"
-"POT-Creation-Date: 2024-03-09 16:17+0800\n"
+"POT-Creation-Date: 2024-02-15 01:57+0800\n"
 "PO-Revision-Date: 2024-02-24 00:16-0500\n"
 "Last-Translator: Keith Bowes <zooplah@gmail.com>\n"
 "Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
@@ -55,9 +55,9 @@ msgstr "Nur unu dosiero estas specifebla per '--files' aŭ '--files0'."
 #. TRANSLATORS: This is a translatable
 #. string because French needs a space
 #. before the colon ("%s : %s").
-#: src/xz/args.c:621 src/xz/coder.c:1068 src/xz/coder.c:1084
-#: src/xz/coder.c:1384 src/xz/coder.c:1387 src/xz/file_io.c:518
-#: src/xz/file_io.c:592 src/xz/file_io.c:682 src/xz/file_io.c:854
+#: src/xz/args.c:621 src/xz/coder.c:1058 src/xz/coder.c:1074
+#: src/xz/coder.c:1374 src/xz/coder.c:1377 src/xz/file_io.c:685
+#: src/xz/file_io.c:759 src/xz/file_io.c:849 src/xz/file_io.c:1020
 #: src/xz/list.c:368 src/xz/list.c:414 src/xz/list.c:476 src/xz/list.c:590
 #: src/xz/list.c:599
 #, c-format
@@ -151,42 +151,46 @@ msgstr "Nekomprenata filtrila ĉeno aŭ filtrilaj elektoj"
 msgid "Decompression will need %s MiB of memory."
 msgstr "Malkunpremado postulos %s megabajtojn da memoro."
 
-#: src/xz/coder.c:591
+#: src/xz/coder.c:584
 #, c-format
 msgid "Reduced the number of threads from %s to %s to not exceed the memory usage limit of %s MiB"
 msgstr "Malpliigis la nombron da fadenoj de %s ĝis %s por ne superi la memoruzadan limigo de %s megabajtoj"
 
-#: src/xz/coder.c:614
+#: src/xz/coder.c:604
 #, c-format
 msgid "Reduced the number of threads from %s to one. The automatic memory usage limit of %s MiB is still being exceeded. %s MiB of memory is required. Continuing anyway."
 msgstr "Malpliigis la nombron da fadenoj de %s ĝis unu. La aŭtomata memoruzada limigo de %s megabajtoj ankoraŭ estas superata. %s megabajtoj da memoro estas postulata. Senkonsidere daŭrigas."
 
-#: src/xz/coder.c:641
+#: src/xz/coder.c:631
 #, c-format
 msgid "Switching to single-threaded mode to not exceed the memory usage limit of %s MiB"
 msgstr "Ŝanĝas al unufadena reĝimo por ne superi la memoruzadan limigon de %s megabajtoj"
 
-#: src/xz/coder.c:766
+#: src/xz/coder.c:756
 #, c-format
 msgid "Adjusted LZMA%c dictionary size from %s MiB to %s MiB to not exceed the memory usage limit of %s MiB"
 msgstr "Alĝŭstigis vortara grando de LZMA%c de %s megabajtoj ĝis %s megabajtoj por ne superi la memoruzadan limigon de %s megabajtoj"
 
-#: src/xz/coder.c:776
+#: src/xz/coder.c:766
 #, c-format
 msgid "Adjusted LZMA%c dictionary size for --filters%u from %s MiB to %s MiB to not exceed the memory usage limit of %s MiB"
 msgstr "Alĝustigis vortara grando de LZMA%c por --filters%u de %s megabajtoj ĝis %s megabajtoj por ne superi la memoruzadan limigon de %s megabajtoj"
 
-#: src/xz/coder.c:1150
+#: src/xz/coder.c:1140
 #, c-format
 msgid "Error changing to filter chain %u: %s"
 msgstr "Eraro dum ŝanĝiĝo al filtrila ĉeno %u: %s"
 
-#: src/xz/file_io.c:122 src/xz/file_io.c:130
+#: src/xz/file_io.c:136 src/xz/file_io.c:144
 #, c-format
 msgid "Error creating a pipe: %s"
 msgstr "Eraro dum krei dukton: %s"
 
-#: src/xz/file_io.c:207
+#: src/xz/file_io.c:332
+msgid "Failed to enable the sandbox"
+msgstr "Malsukcesis aktivigi la sablujon"
+
+#: src/xz/file_io.c:374
 #, c-format
 msgid "%s: poll() failed: %s"
 msgstr "%s: poll() malsukcesis: %s"
@@ -201,111 +205,111 @@ msgstr "%s: poll() malsukcesis: %s"
 #. it is possible that the user has put a new file in place
 #. of the original file, and in that case it obviously
 #. shouldn't be removed.
-#: src/xz/file_io.c:274
+#: src/xz/file_io.c:441
 #, c-format
 msgid "%s: File seems to have been moved, not removing"
 msgstr "%s: Dosiero ŝajne estis movita, ne forigos"
 
-#: src/xz/file_io.c:281 src/xz/file_io.c:838
+#: src/xz/file_io.c:448 src/xz/file_io.c:1004
 #, c-format
 msgid "%s: Cannot remove: %s"
 msgstr "%s: Ne eblas forigi: %s"
 
-#: src/xz/file_io.c:307
+#: src/xz/file_io.c:474
 #, c-format
 msgid "%s: Cannot set the file owner: %s"
 msgstr "%s: Ne eblas agordi la dosieran estron: %s"
 
-#: src/xz/file_io.c:320
+#: src/xz/file_io.c:487
 #, c-format
 msgid "%s: Cannot set the file group: %s"
 msgstr "%s: Ne eblas agordi la dosieran grupon: %s"
 
-#: src/xz/file_io.c:339
+#: src/xz/file_io.c:506
 #, c-format
 msgid "%s: Cannot set the file permissions: %s"
 msgstr "%s: Ne eblas agordi la dosierajn atingopermesojn: %s"
 
-#: src/xz/file_io.c:465
+#: src/xz/file_io.c:632
 #, c-format
 msgid "Error getting the file status flags from standard input: %s"
 msgstr "Eraro dum atingi la dosierstatajn flagojn de ĉefenigujon: %s"
 
-#: src/xz/file_io.c:523 src/xz/file_io.c:585
+#: src/xz/file_io.c:690 src/xz/file_io.c:752
 #, c-format
 msgid "%s: Is a symbolic link, skipping"
 msgstr "%s: Estas simbola ligilo, preterpasas"
 
-#: src/xz/file_io.c:614
+#: src/xz/file_io.c:781
 #, c-format
 msgid "%s: Is a directory, skipping"
 msgstr "%s: Estas dosierujo, preterpasas"
 
-#: src/xz/file_io.c:620
+#: src/xz/file_io.c:787
 #, c-format
 msgid "%s: Not a regular file, skipping"
 msgstr "%s: Ne regula dosiero, preterpasas"
 
-#: src/xz/file_io.c:637
+#: src/xz/file_io.c:804
 #, c-format
 msgid "%s: File has setuid or setgid bit set, skipping"
 msgstr "%s: Dosiero havas setuid- aŭ setgid-biton, preterpasas"
 
-#: src/xz/file_io.c:644
+#: src/xz/file_io.c:811
 #, c-format
 msgid "%s: File has sticky bit set, skipping"
 msgstr "%s: Dosiero havas glueman biton, preterpasas"
 
-#: src/xz/file_io.c:651
+#: src/xz/file_io.c:818
 #, c-format
 msgid "%s: Input file has more than one hard link, skipping"
 msgstr "%s: Enmeta dosiero havas pli ol rektan ligilon, preterpasas"
 
-#: src/xz/file_io.c:693
+#: src/xz/file_io.c:860
 msgid "Empty filename, skipping"
 msgstr "Malplena dosiero, preterpasas"
 
-#: src/xz/file_io.c:748
+#: src/xz/file_io.c:914
 #, c-format
 msgid "Error restoring the status flags to standard input: %s"
 msgstr "Eraro dum restarigi la statajn flagojn de la ĉefenigujo: %s"
 
-#: src/xz/file_io.c:796
+#: src/xz/file_io.c:962
 #, c-format
 msgid "Error getting the file status flags from standard output: %s"
 msgstr "Eraro dum atingi la dosierstatajn flagojn el la ĉefenigujo: %s"
 
-#: src/xz/file_io.c:995
+#: src/xz/file_io.c:1161
 #, c-format
 msgid "Error restoring the O_APPEND flag to standard output: %s"
 msgstr "Eraro dum restarigi la flagon O_APPEND de la ĉefenigujo: %s"
 
-#: src/xz/file_io.c:1007
+#: src/xz/file_io.c:1173
 #, c-format
 msgid "%s: Closing the file failed: %s"
 msgstr "%s: Fermo de la dosiero malsukcesis: %s"
 
-#: src/xz/file_io.c:1043 src/xz/file_io.c:1305
+#: src/xz/file_io.c:1209 src/xz/file_io.c:1471
 #, c-format
 msgid "%s: Seeking failed when trying to create a sparse file: %s"
 msgstr "%s: Serĉado malsukcesis dum provi krei maldensan dosieron: %s"
 
-#: src/xz/file_io.c:1143
+#: src/xz/file_io.c:1309
 #, c-format
 msgid "%s: Read error: %s"
 msgstr "%s: Legeraro: %s"
 
-#: src/xz/file_io.c:1173
+#: src/xz/file_io.c:1339
 #, c-format
 msgid "%s: Error seeking the file: %s"
 msgstr "%s: Eraro dum serĉi la dosieron: %s"
 
-#: src/xz/file_io.c:1197
+#: src/xz/file_io.c:1363
 #, c-format
 msgid "%s: Unexpected end of file"
 msgstr "%s: Neatendita dosierfino"
 
-#: src/xz/file_io.c:1256
+#: src/xz/file_io.c:1422
 #, c-format
 msgid "%s: Write error: %s"
 msgstr "%s: Skriberaro: %s"
@@ -566,26 +570,26 @@ msgstr "Provi la programon 'lzmainfo' por .lzma-dosieroj."
 msgid "--list does not support reading from standard input"
 msgstr "--list ne regas legadon el la ĉefenigujo"
 
-#: src/xz/main.c:89
+#: src/xz/main.c:95
 #, c-format
 msgid "%s: Error reading filenames: %s"
 msgstr "%s: Eraro dum legi dosiernomojn: %s"
 
-#: src/xz/main.c:96
+#: src/xz/main.c:102
 #, c-format
 msgid "%s: Unexpected end of input when reading filenames"
 msgstr "%s: Neatendita fino de enigo dum legi dosiernomojn"
 
-#: src/xz/main.c:120
+#: src/xz/main.c:126
 #, c-format
 msgid "%s: Null character found when reading filenames; maybe you meant to use '--files0' instead of '--files'?"
 msgstr "%s: Nula signo trovita dum legi dosiernomojn; eble vi celis uzi la parametron '--files0' anstataŭ '--files'"
 
-#: src/xz/main.c:191
+#: src/xz/main.c:206
 msgid "Compression and decompression with --robot are not supported yet."
 msgstr "Kunpremo kaj malkunmpremo per --robot ankoraŭ ne estas regataj."
 
-#: src/xz/main.c:289
+#: src/xz/main.c:284
 msgid "Cannot read data from standard input when reading filenames from standard input"
 msgstr "Ne eblas legi datumojn el la ĉefenigujo dum legi dosiernomojn el la ĉefenigujo"
 
@@ -593,68 +597,68 @@ msgstr "Ne eblas legi datumojn el la ĉefenigujo dum legi dosiernomojn el la ĉe
 #. of the line in messages. Usually it becomes "xz: ".
 #. This is a translatable string because French needs
 #. a space before a colon.
-#: src/xz/message.c:651 src/xz/message.c:706
+#: src/xz/message.c:670 src/xz/message.c:725
 #, c-format
 msgid "%s: "
 msgstr "%s: "
 
-#: src/xz/message.c:778 src/xz/message.c:837 src/lzmainfo/lzmainfo.c:131
+#: src/xz/message.c:797 src/xz/message.c:856 src/lzmainfo/lzmainfo.c:131
 msgid "Internal error (bug)"
 msgstr "Interna programeraro"
 
-#: src/xz/message.c:785
+#: src/xz/message.c:804
 msgid "Cannot establish signal handlers"
 msgstr "Ne eblas establi signalajn traktilojn"
 
-#: src/xz/message.c:794
+#: src/xz/message.c:813
 msgid "No integrity check; not verifying file integrity"
 msgstr "Neniu integra kontrolo; ne certigos dosieran integron"
 
-#: src/xz/message.c:797
+#: src/xz/message.c:816
 msgid "Unsupported type of integrity check; not verifying file integrity"
 msgstr "Nekomprenata tipo de integra kontrolo; ne certigos dosieran integron"
 
-#: src/xz/message.c:804
+#: src/xz/message.c:823
 msgid "Memory usage limit reached"
 msgstr "Memoruzada limigo atingita"
 
-#: src/xz/message.c:807
+#: src/xz/message.c:826
 msgid "File format not recognized"
 msgstr "Dosierformato ne rekonata"
 
-#: src/xz/message.c:810
+#: src/xz/message.c:829
 msgid "Unsupported options"
 msgstr "Nekomprenataj elektoj"
 
-#: src/xz/message.c:813
+#: src/xz/message.c:832
 msgid "Compressed data is corrupt"
 msgstr "Kunpremitaj datumoj estas koruptaj"
 
-#: src/xz/message.c:816
+#: src/xz/message.c:835
 msgid "Unexpected end of input"
 msgstr "Neatendita fino de enigo"
 
-#: src/xz/message.c:858
+#: src/xz/message.c:877
 #, c-format
 msgid "%s MiB of memory is required. The limiter is disabled."
 msgstr "%s megabajtoj da memoro estas postulataj. La limigilo estas malaktiva."
 
-#: src/xz/message.c:886
+#: src/xz/message.c:905
 #, c-format
 msgid "%s MiB of memory is required. The limit is %s."
 msgstr "%s megabajtoj da memoro estas postulata. La limigo estas %s."
 
-#: src/xz/message.c:905
+#: src/xz/message.c:924
 #, c-format
 msgid "%s: Filter chain: %s\n"
 msgstr "%s: Filtrila ĉeno: %s\n"
 
-#: src/xz/message.c:916
+#: src/xz/message.c:935
 #, c-format
 msgid "Try '%s --help' for more information."
 msgstr "'%s --help' por pliaj informaj."
 
-#: src/xz/message.c:942
+#: src/xz/message.c:961
 #, c-format
 msgid ""
 "Usage: %s [OPTION]... [FILE]...\n"
@@ -665,17 +669,17 @@ msgstr ""
 "Kunpremi aŭ malkunpremi DOSIEROjN laŭ la .xz-formato.\n"
 "\n"
 
-#: src/xz/message.c:949
+#: src/xz/message.c:968
 msgid "Mandatory arguments to long options are mandatory for short options too.\n"
 msgstr ""
 "Devigitaj parametroj por longaj elektoj estas ankaŭ devigitaj por\n"
 "mallongaj elektoj.\n"
 
-#: src/xz/message.c:953
+#: src/xz/message.c:972
 msgid " Operation mode:\n"
 msgstr " Operacia reĝimo:\n"
 
-#: src/xz/message.c:956
+#: src/xz/message.c:975
 msgid ""
 "  -z, --compress      force compression\n"
 "  -d, --decompress    force decompression\n"
@@ -687,7 +691,7 @@ msgstr ""
 "  -t, --test          certigi la integron de kunpremitan dosieron\n"
 "  -l, --list          listigi informojn pri .xz-dosierojn"
 
-#: src/xz/message.c:962
+#: src/xz/message.c:981
 msgid ""
 "\n"
 " Operation modifiers:\n"
@@ -695,7 +699,7 @@ msgstr ""
 "\n"
 " Operacia modifiloj:\n"
 
-#: src/xz/message.c:965
+#: src/xz/message.c:984
 msgid ""
 "  -k, --keep          keep (don't delete) input files\n"
 "  -f, --force         force overwrite of output file and (de)compress links\n"
@@ -706,7 +710,7 @@ msgstr ""
 "                      (mal)kunpmremajn ligilojn \n"
 "  -c, --stdout        skribi al la ĉefeligujo kaj ne forigi enigajn dosierojn"
 
-#: src/xz/message.c:974
+#: src/xz/message.c:993
 msgid ""
 "      --single-stream decompress only the first stream, and silently\n"
 "                      ignore possible remaining input data"
@@ -715,7 +719,7 @@ msgstr ""
 "                      malkunpremi nur la unuan fluon kaj silente\n"
 "                      ignori eventualajn ceterajn enigajn datumojn"
 
-#: src/xz/message.c:977
+#: src/xz/message.c:996
 msgid ""
 "      --no-sparse     do not create sparse files when decompressing\n"
 "  -S, --suffix=.SUF   use the suffix '.SUF' on compressed files\n"
@@ -733,7 +737,7 @@ msgstr ""
 "      --files0[=DOSIERO]\n"
 "                      kiel --files sed uzi la nulan signon por finigi"
 
-#: src/xz/message.c:986
+#: src/xz/message.c:1005
 msgid ""
 "\n"
 " Basic file format and compression options:\n"
@@ -741,7 +745,7 @@ msgstr ""
 "\n"
 " Bazaj dosierformataj kaj kunpremaj elektoj:\n"
 
-#: src/xz/message.c:988
+#: src/xz/message.c:1007
 msgid ""
 "  -F, --format=FMT    file format to encode or decode; possible values are\n"
 "                      'auto' (default), 'xz', 'lzma', 'lzip', and 'raw'\n"
@@ -753,11 +757,11 @@ msgstr ""
 "  -C, --check=KONT    tipo de integra kontrolo: 'none' (estu atentema),\n"
 "                      'crc32', 'crc64' (apriora) aŭ 'sha256'"
 
-#: src/xz/message.c:993
+#: src/xz/message.c:1012
 msgid "      --ignore-check  don't verify the integrity check when decompressing"
 msgstr "      --ignore-check  ne certigi la integran kontrolon dum malkunpremo"
 
-#: src/xz/message.c:997
+#: src/xz/message.c:1016
 msgid ""
 "  -0 ... -9           compression preset; default is 6; take compressor *and*\n"
 "                      decompressor memory usage into account before using 7-9!"
@@ -765,7 +769,7 @@ msgstr ""
 "  -0 ... -9           kunpremnivelo; apriore 6; pripensu memoruzadon antaŭ ol\n"
 "                      uzi la nivelojn 7-9!"
 
-#: src/xz/message.c:1001
+#: src/xz/message.c:1020
 msgid ""
 "  -e, --extreme       try to improve compression ratio by using more CPU time;\n"
 "                      does not affect decompressor memory requirements"
@@ -774,7 +778,7 @@ msgstr ""
 "                      ĉefprocesoran tempon; ne influas la memorajn postulojn\n"
 "                      de malkunpremo"
 
-#: src/xz/message.c:1005
+#: src/xz/message.c:1024
 msgid ""
 "  -T, --threads=NUM   use at most NUM threads; the default is 0 which uses\n"
 "                      as many threads as there are processor cores"
@@ -783,7 +787,7 @@ msgstr ""
 "                      uzi maksimume NOMBRO da fadenoj; apriore 0, kiu\n"
 "                      uzas fadenojn samnombrajn kiel procesorajn kernojn"
 
-#: src/xz/message.c:1010
+#: src/xz/message.c:1029
 msgid ""
 "      --block-size=SIZE\n"
 "                      start a new .xz block after every SIZE bytes of input;\n"
@@ -793,7 +797,7 @@ msgstr ""
 "                      komenci novan .xz-blokon post ĉiu GRANDO bajtoj da enigo;\n"
 "                      uzi por agordi la blokan grandon por kunfadena kunpremo"
 
-#: src/xz/message.c:1014
+#: src/xz/message.c:1033
 msgid ""
 "      --block-list=BLOCKS\n"
 "                      start a new .xz block after the given comma-separated\n"
@@ -807,7 +811,7 @@ msgstr ""
 "                      specifi numero (0-9) de filtrila ĉeno kaj poste ':' antaŭ\n"
 "                      la malkunpremita datuma grando"
 
-#: src/xz/message.c:1020
+#: src/xz/message.c:1039
 msgid ""
 "      --flush-timeout=TIMEOUT\n"
 "                      when compressing, if more than TIMEOUT milliseconds has\n"
@@ -819,7 +823,7 @@ msgstr ""
 "                      okazis post la antaŭan elbufrigo kaj legi pliajn enigojn\n"
 "                      paŭzigus, ĉiuj atendataj datumoj estas elbufrigataj"
 
-#: src/xz/message.c:1026
+#: src/xz/message.c:1045
 #, no-c-format
 msgid ""
 "      --memlimit-compress=LIMIT\n"
@@ -838,7 +842,7 @@ msgstr ""
 "                      kunfadena kunpmero aŭ ĉiuj el tiuj; LIMIGO estas\n"
 "                      laŭ bajtoj, % da ĉefmemoro, aŭ 0 por aprioraĵoj"
 
-#: src/xz/message.c:1035
+#: src/xz/message.c:1054
 msgid ""
 "      --no-adjust     if compression settings exceed the memory usage limit,\n"
 "                      give an error instead of adjusting the settings downwards"
@@ -846,7 +850,7 @@ msgstr ""
 "      --no-adjust     se kunprema agordo superas la memoruzadan limigon\n"
 "                      montri eraron anstataŭ malgrandigi la agordaĵon"
 
-#: src/xz/message.c:1041
+#: src/xz/message.c:1060
 msgid ""
 "\n"
 " Custom filter chain for compression (alternative for using presets):"
@@ -854,7 +858,7 @@ msgstr ""
 "\n"
 " Propra filtrila ĉeno por kunpremo (alternativaj por uzi antaŭagordaĵon):"
 
-#: src/xz/message.c:1044
+#: src/xz/message.c:1063
 msgid ""
 "\n"
 "  --filters=FILTERS   set the filter chain using the liblzma filter string\n"
@@ -864,7 +868,7 @@ msgstr ""
 "  --filters=FILTRILOJ   agordi la filtrilan ĉenan uzanta la sintakso de la\n"
 "                      lzma-filtrila ĉeno.  --filters-help or pliaj informoj"
 
-#: src/xz/message.c:1050
+#: src/xz/message.c:1069
 msgid ""
 "  --filters1=FILTERS ... --filters9=FILTERS\n"
 "                      set additional filter chains using the liblzma filter\n"
@@ -874,7 +878,7 @@ msgstr ""
 "                      agordi aldonajn filtrilajn ĉenojn por uzi kun\n"
 "                      --block-list per la sintakso de liblzma-filtrila ĉeno"
 
-#: src/xz/message.c:1056
+#: src/xz/message.c:1075
 msgid ""
 "  --filters-help      display more information about the liblzma filter string\n"
 "                      syntax and exit."
@@ -882,7 +886,7 @@ msgstr ""
 "  --filters-help      montri pliajn informojn pri la sintakso de la\n"
 "                      liblzma-filtrila ĉeno kaj poste eliri."
 
-#: src/xz/message.c:1067
+#: src/xz/message.c:1086
 msgid ""
 "\n"
 "  --lzma1[=OPTS]      LZMA1 or LZMA2; OPTS is a comma-separated list of zero or\n"
@@ -915,7 +919,7 @@ msgstr ""
 "                        depth=NUM  maksimuma profundo de serĉo; 0=aŭtomata\n"
 "                                   (apriore)"
 
-#: src/xz/message.c:1082
+#: src/xz/message.c:1101
 msgid ""
 "\n"
 "  --x86[=OPTS]        x86 BCJ filter (32-bit and 64-bit)\n"
@@ -942,7 +946,7 @@ msgstr ""
 "                      Validaj ELEKTOJ por ĉiuj BCJ-filters:\n"
 "                        start=NOMBRO  komenca deŝovo por konvertoj (apriore 0)"
 
-#: src/xz/message.c:1096
+#: src/xz/message.c:1115
 msgid ""
 "\n"
 "  --delta[=OPTS]      Delta filter; valid OPTS (valid values; default):\n"
@@ -954,7 +958,7 @@ msgstr ""
 "                        dist=NOMBRO  distanco inter bajtoj subtrahataj de unu\n"
 "                                     la alia (1-256; 1)"
 
-#: src/xz/message.c:1104
+#: src/xz/message.c:1123
 msgid ""
 "\n"
 " Other options:\n"
@@ -962,7 +966,7 @@ msgstr ""
 "\n"
 " Aliaj elektoj:\n"
 
-#: src/xz/message.c:1107
+#: src/xz/message.c:1126
 msgid ""
 "  -q, --quiet         suppress warnings; specify twice to suppress errors too\n"
 "  -v, --verbose       be verbose; specify twice for even more verbose"
@@ -971,15 +975,15 @@ msgstr ""
 "  -v, --verbose       eligi superfluajn informojn; uzu dufoje por pliigi la\n"
 "                      superfluecon"
 
-#: src/xz/message.c:1112
+#: src/xz/message.c:1131
 msgid "  -Q, --no-warn       make warnings not affect the exit status"
 msgstr "  -Q, --no-warn       avertoj ne influu la eliran staton"
 
-#: src/xz/message.c:1114
+#: src/xz/message.c:1133
 msgid "      --robot         use machine-parsable messages (useful for scripts)"
 msgstr "      --robot         uzi mesaĝojn facile analizeblaj per skriptoj"
 
-#: src/xz/message.c:1117
+#: src/xz/message.c:1136
 msgid ""
 "      --info-memory   display the total amount of RAM and the currently active\n"
 "                      memory usage limits, and exit"
@@ -987,7 +991,7 @@ msgstr ""
 "      --info-memory   montri la totalan kiomon de la ĉefmemoro kaj la nune\n"
 "                      aktivaj memoruzadaj limigoj, kaj finiĝi"
 
-#: src/xz/message.c:1120
+#: src/xz/message.c:1139
 msgid ""
 "  -h, --help          display the short help (lists only the basic options)\n"
 "  -H, --long-help     display this long help and exit"
@@ -996,7 +1000,7 @@ msgstr ""
 "                      elektojn)\n"
 "  -H, --long-help     montri la longan helpon kaj finiĝi"
 
-#: src/xz/message.c:1124
+#: src/xz/message.c:1143
 msgid ""
 "  -h, --help          display this short help and exit\n"
 "  -H, --long-help     display the long help (lists also the advanced options)"
@@ -1005,11 +1009,11 @@ msgstr ""
 "  -H, --long-help     montri la longan helpon (listigas ankaŭ la altnivelajn\n"
 "                      elektojn)"
 
-#: src/xz/message.c:1129
+#: src/xz/message.c:1148
 msgid "  -V, --version       display the version number and exit"
 msgstr "  -V, --version       montri la eldonan numeron kaj finiĝi"
 
-#: src/xz/message.c:1131 src/lzmainfo/lzmainfo.c:37
+#: src/xz/message.c:1150 src/lzmainfo/lzmainfo.c:37
 #, c-format
 msgid ""
 "\n"
@@ -1022,21 +1026,21 @@ msgstr ""
 #. for this package. Please add _another line_ saying
 #. "Report translation bugs to <...>\n" with the email or WWW
 #. address for translation bugs. Thanks.
-#: src/xz/message.c:1137 src/lzmainfo/lzmainfo.c:40
+#: src/xz/message.c:1156 src/lzmainfo/lzmainfo.c:40
 #, c-format
 msgid "Report bugs to <%s> (in English or Finnish).\n"
 msgstr "Raporti programerarojn al <%s> (en la angla aŭ la suoma).\n"
 
-#: src/xz/message.c:1139 src/lzmainfo/lzmainfo.c:42
+#: src/xz/message.c:1158 src/lzmainfo/lzmainfo.c:42
 #, c-format
 msgid "%s home page: <%s>\n"
 msgstr "%s ĉefpaĝo: <%s>\n"
 
-#: src/xz/message.c:1143
+#: src/xz/message.c:1162
 msgid "THIS IS A DEVELOPMENT VERSION NOT INTENDED FOR PRODUCTION USE."
 msgstr "ĈI TIU ESTAS DISVOLVA REDAKCIO, NE CELATA POR ĈIUTAGA UZADO."
 
-#: src/xz/message.c:1160
+#: src/xz/message.c:1179
 msgid ""
 "Filter chains are set using the --filters=FILTERS or\n"
 "--filters1=FILTERS ... --filters9=FILTERS options. Each filter in the chain\n"
@@ -1048,7 +1052,7 @@ msgstr ""
 "estas apartigebla per spacetoj aŭ '--'. Alternative antaŭargordo <0-9>[e]\n"
 "anstataŭ filtrila ĉeno estas specifebla.\n"
 
-#: src/xz/message.c:1166
+#: src/xz/message.c:1185
 msgid "The supported filters and their options are:"
 msgstr "La komprenataj filtriloj aŭ filtrilaj elektoj estas:"
 
@@ -1142,6 +1146,3 @@ msgstr "Skribi al la ĉefeligujo malsukcesis"
 #: src/common/tuklib_exit.c:42
 msgid "Unknown error"
 msgstr "Nekonata eraro"
-
-#~ msgid "Failed to enable the sandbox"
-#~ msgstr "Malsukcesis aktivigi la sablujon"
