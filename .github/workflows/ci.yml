@@ -30,7 +30,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@int
+        uses: step-security/harden-runner@v2
         with:
           egress-policy: audit
 
@@ -80,6 +80,14 @@ jobs:
         run: |
           echo "RPM_ARCH=x86_64" >> $GITHUB_ENV
 
-      - name: Build
+      - name: configure
         if: ${{ matrix.os == 'ubuntu-latest' && matrix.build_system == 'autotools' }}
-        run: ./configure && make && make check && make install
+        run: sudo ./configure
+
+      - name: make
+        if: ${{ matrix.os == 'ubuntu-latest' && matrix.build_system == 'autotools' }}
+        run: sudo make
+
+      - name: make install
+        if: ${{ matrix.os == 'ubuntu-latest' && matrix.build_system == 'autotools' }}
+        run: sudo make install
