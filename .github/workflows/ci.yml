@@ -76,6 +76,10 @@ jobs:
       # affect the CFLAGS. Resetting the CFLAGS requires clearing the
       # config cache between runs, so the tests that require CFLAGS are
       # done first.
+      - name: Set environment variables
+        run: |
+          echo "RPM_ARCH=x86_64" >> $GITHUB_ENV
+
       - name: Build
         if: ${{ matrix.os == 'ubuntu-latest' && matrix.build_system == 'autotools' }}
         run: ./configure && make && make check && make install
