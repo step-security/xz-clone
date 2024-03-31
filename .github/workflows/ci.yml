@@ -14,6 +14,9 @@ on:
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+permissions: # added using https://github.com/step-security/secure-repo
+  contents: read
+
 jobs:
   # This workflow contains a single job called "build"
   build:
@@ -23,6 +26,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Harden Runner
+        uses: step-security/harden-runner@v2
+        with:
+          egress-policy: audit
+
       - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
