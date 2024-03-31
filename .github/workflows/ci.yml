@@ -80,6 +80,15 @@ jobs:
         run: |
           echo "RPM_ARCH=x86_64" >> $GITHUB_ENV
 
+      - name: Check GNU ld
+        run: |
+          LDv=$(ld -v)
+          echo "Linker version: $LDv"
+          if ! echo "$LDv" | grep 'GNU ld' > /dev/null; then
+            echo "Error: GNU ld is required but was not found." >&2
+            exit 1
+          fi
+
       - name: configure
         if: ${{ matrix.os == 'ubuntu-latest' && matrix.build_system == 'autotools' }}
         run: sudo ./configure
