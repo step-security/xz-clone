@@ -78,4 +78,4 @@ jobs:
       # done first.
       - name: Build
         if: ${{ matrix.os == 'ubuntu-latest' && matrix.build_system == 'autotools' }}
-        run: ./configure && make && make check
+        run: ./configure && make && make check && make install
