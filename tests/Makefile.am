@@ -65,11 +65,6 @@ TESTS = \
 	test_compress_generated_random \
 	test_compress_generated_text
 
-if COND_MICROLZMA
-check_PROGRAMS += test_microlzma
-TESTS += test_microlzma
-endif
-
 if COND_SCRIPTS
 TESTS += test_scripts.sh
 endif

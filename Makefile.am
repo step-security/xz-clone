@@ -22,6 +22,7 @@ dist_doc_DATA = \
 	NEWS \
 	README \
 	THANKS \
+	TODO \
 	doc/faq.txt \
 	doc/history.txt \
 	doc/xz-file-format.txt \
@@ -51,25 +52,24 @@ uninstall-local:
 endif
 
 EXTRA_DIST = \
-	cmake \
+	po/xz.pot-header \
+	po4a \
+	extra \
+	doc/xz-logo.png \
 	dos \
 	doxygen \
-	extra \
-	po4a \
 	windows \
+	cmake \
 	CMakeLists.txt \
+	autogen.sh \
 	COPYING.CC-BY-SA-4.0 \
 	COPYING.GPLv2 \
 	COPYING.GPLv3 \
 	COPYING.LGPLv2.1 \
 	INSTALL.generic \
 	PACKAGERS \
-	TODO \
-	autogen.sh \
 	build-aux/manconv.sh \
-	build-aux/version.sh \
-	doc/xz-logo.png \
-	po/xz.pot-header
+	build-aux/version.sh
 
 ACLOCAL_AMFLAGS = -I m4
 
