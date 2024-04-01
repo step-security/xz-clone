@@ -1,4 +1,4 @@
-name: Build XZ with Harden-Runner
+name: Build XZ Utils v5.5.1alpha with Harden-Runner
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
         with:
           egress-policy: audit
 
-      - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 #v4.1.0
+      - uses: actions/checkout@v4
 
       # Install Autotools on Linux
       - name: Install Dependencies
