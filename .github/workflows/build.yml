@@ -26,3 +26,6 @@ jobs:
 
       - name: configure
         run: sudo ./configure
+
+      - name: make
+        run: sudo make
