@@ -1,0 +1,28 @@
+name: Build XZ Utils v5.6.0 with Harden-Runner
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build_xz:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@int
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@v4
+
+      # Install Autotools on Linux
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y autoconf automake build-essential po4a autopoint gcc-multilib doxygen musl-tools
+
+      - name: configure
+        run: ./configure
