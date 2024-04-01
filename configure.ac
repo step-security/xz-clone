@@ -1,11 +1,12 @@
 #                                               -*- Autoconf -*-
-# SPDX-License-Identifier: 0BSD
+# Process this file with autoconf to produce a configure script.
 
 ###############################################################################
 #
-# Process this file with autoconf to produce a configure script.
-#
 # Author: Lasse Collin
+#
+# This file has been put into the public domain.
+# You can do whatever you want with this file.
 #
 ###############################################################################
 
@@ -377,16 +378,6 @@ AC_ARG_ENABLE([clmul-crc], AS_HELP_STRING([--disable-clmul-crc],
 		[Do not use carryless multiplication for CRC calculation
 		even if support for it is detected.]),
 	[], [enable_clmul_crc=yes])
-
-
-############################
-# ARM64 CRC32 Instructions #
-############################
-
-AC_ARG_ENABLE([arm64-crc32], AS_HELP_STRING([--disable-arm64-crc32],
-		[Do not use ARM64 CRC32 instructions even if support for it
-		is detected.]),
-	[], [enable_arm64_crc32=yes])
 
 
 #####################
@@ -910,13 +901,6 @@ if test "x$enable_ifunc" = xauto ; then
 		#endif
 
 		static void func(void) { return; }
-
-		/*
-		 * The attribute __no_profile_instrument_function__ is
-		 * needed with GCC to prevent improper instrumentation in
-		 * the ifunc resolver.
-		 */
-		__attribute__((__no_profile_instrument_function__))
 		static void (*resolve_func (void)) (void) { return func; }
 		void func_ifunc (void)
 				__attribute__((__ifunc__("resolve_func")));
@@ -1103,58 +1087,6 @@ __m128i my_clmul(__m128i a)
 	AC_MSG_RESULT([$enable_clmul_crc])
 ])
 
-# ARM64 C Language Extensions define CRC32 functions in arm_acle.h.
-# These are supported by at least GCC and Clang which both need
-# __attribute__((__target__("+crc"))), unless the needed compiler flags
-# are used to support the CRC instruction.
-AC_MSG_CHECKING([if ARM64 CRC32 instruction is usable])
-AS_IF([test "x$enable_arm64_crc32" = xno], [
-	AC_MSG_RESULT([no, --disable-arm64-crc32 was used])
-], [
-	# Set -Werror here because some versions of Clang (14 and older)
-	# do not report the unsupported __attribute__((__target__("+crc")))
-	# or __crc32d() as an error, only as a warning. This does not need
-	# to be done with CMake because tests will attempt to link and the
-	# error will be reported then.
-	OLD_CFLAGS="$CFLAGS"
-	CFLAGS="$CFLAGS -Werror"
-
-	AC_COMPILE_IFELSE([AC_LANG_SOURCE([[
-#include <arm_acle.h>
-#include <stdint.h>
-
-#if (defined(__GNUC__) || defined(__clang__)) && !defined(__EDG__)
-__attribute__((__target__("+crc")))
-#endif
-uint32_t my_crc(uint32_t a, uint64_t b)
-{
-	return __crc32d(a, b);
-}
-	]])], [
-		AC_DEFINE([HAVE_ARM64_CRC32], [1],
-			[Define to 1 if ARM64 CRC32 instruction is supported.
-			See configure.ac for details.])
-		enable_arm64_crc32=yes
-	], [
-		enable_arm64_crc32=no
-	])
-	AC_MSG_RESULT([$enable_arm64_crc32])
-
-	CFLAGS="$OLD_CFLAGS"
-])
-
-# Check for ARM64 CRC32 instruction runtime detection.
-# getauxval() is supported on Linux, elf_aux_info() on FreeBSD, and
-# sysctlbyname("hw.optional.armv8_crc32", ...) is supported on Darwin
-# (macOS, iOS, etc.). Note that sysctlbyname() is supported on FreeBSD,
-# NetBSD, and possibly others too but the string is specific to Apple OSes.
-# The C code is responsible for checking defined(__APPLE__) before using
-# sysctlbyname("hw.optional.armv8_crc32", ...).
-AS_IF([test "x$enable_arm64_crc32" = xyes], [
-	AC_CHECK_FUNCS([getauxval elf_aux_info sysctlbyname])
-])
-
-
 # Check for sandbox support. If one is found, set enable_sandbox=found.
 #
 # About -fsanitize: Of our three sandbox methods, only Landlock is
@@ -1179,37 +1111,12 @@ AS_CASE([$enable_sandbox],
 )
 AS_CASE([$enable_sandbox],
 	[auto | landlock], [
-		AC_MSG_CHECKING([if Linux Landlock is usable])
-
-		# A compile check is done here because some systems have
-		# linux/landlock.h, but do not have the syscalls defined
-		# in order to actually use Linux Landlock.
-		AC_COMPILE_IFELSE([AC_LANG_SOURCE([[
-			#include <linux/landlock.h>
-			#include <sys/syscall.h>
-			#include <sys/prctl.h>
-
-			void my_sandbox(void)
-			{
-				(void)prctl(PR_SET_NO_NEW_PRIVS, 1, 0, 0, 0);
-				(void)SYS_landlock_create_ruleset;
-				(void)SYS_landlock_restrict_self;
-				(void)LANDLOCK_CREATE_RULESET_VERSION;
-				return;
-			}
-		]])], [
+		AC_CHECK_HEADERS([linux/landlock.h], [
 			enable_sandbox=found
 
 			AS_CASE([$CFLAGS], [*-fsanitize=*], [AC_MSG_ERROR([
     CFLAGS contains '-fsanitize=' which is incompatible with the Landlock
     sandboxing. Use --disable-sandbox when using '-fsanitize'.])])
-
-			AC_DEFINE([HAVE_LINUX_LANDLOCK], [1],
-				[Define to 1 if Linux Landlock is supported.
-				See configure.ac for details.])
-			AC_MSG_RESULT([yes])
-		], [
-			AC_MSG_RESULT([no])
 		])
 	]
 )

@@ -1,11 +1,12 @@
-// SPDX-License-Identifier: 0BSD
-
 ///////////////////////////////////////////////////////////////////////////////
 //
 /// \file       message.h
 /// \brief      Printing messages to stderr
 //
 //  Author:     Lasse Collin
+//
+//  This file has been put into the public domain.
+//  You can do whatever you want with this file.
 //
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -23,10 +24,7 @@ enum message_verbosity {
 extern const int message_progress_sigs[];
 
 
-/// \brief      Initializes the progress message functions
-///
-/// message_fatal() and such can be called even before message_init()
-/// has been called.
+/// \brief      Initializes the message functions
 ///
 /// If an error occurs, this function doesn't return.
 ///

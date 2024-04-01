@@ -99,16 +99,15 @@ bin_PROGRAMS = xz$(EXEEXT)
 subdir = src/xz
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/ax_pthread.m4 \
-	$(top_srcdir)/m4/build-to-host.m4 $(top_srcdir)/m4/getopt.m4 \
-	$(top_srcdir)/m4/gettext.m4 $(top_srcdir)/m4/host-cpu-c-abi.m4 \
-	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intlmacosx.m4 \
-	$(top_srcdir)/m4/lib-ld.m4 $(top_srcdir)/m4/lib-link.m4 \
-	$(top_srcdir)/m4/lib-prefix.m4 $(top_srcdir)/m4/libtool.m4 \
-	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
-	$(top_srcdir)/m4/ltversion.m4 $(top_srcdir)/m4/lt~obsolete.m4 \
-	$(top_srcdir)/m4/nls.m4 $(top_srcdir)/m4/po.m4 \
-	$(top_srcdir)/m4/posix-shell.m4 $(top_srcdir)/m4/progtest.m4 \
-	$(top_srcdir)/m4/tuklib_common.m4 \
+	$(top_srcdir)/m4/getopt.m4 $(top_srcdir)/m4/gettext.m4 \
+	$(top_srcdir)/m4/host-cpu-c-abi.m4 $(top_srcdir)/m4/iconv.m4 \
+	$(top_srcdir)/m4/intlmacosx.m4 $(top_srcdir)/m4/lib-ld.m4 \
+	$(top_srcdir)/m4/lib-link.m4 $(top_srcdir)/m4/lib-prefix.m4 \
+	$(top_srcdir)/m4/libtool.m4 $(top_srcdir)/m4/ltoptions.m4 \
+	$(top_srcdir)/m4/ltsugar.m4 $(top_srcdir)/m4/ltversion.m4 \
+	$(top_srcdir)/m4/lt~obsolete.m4 $(top_srcdir)/m4/nls.m4 \
+	$(top_srcdir)/m4/po.m4 $(top_srcdir)/m4/posix-shell.m4 \
+	$(top_srcdir)/m4/progtest.m4 $(top_srcdir)/m4/tuklib_common.m4 \
 	$(top_srcdir)/m4/tuklib_cpucores.m4 \
 	$(top_srcdir)/m4/tuklib_integer.m4 \
 	$(top_srcdir)/m4/tuklib_mbstr.m4 \
@@ -127,21 +126,19 @@ PROGRAMS = $(bin_PROGRAMS)
 am__xz_SOURCES_DIST = args.c args.h coder.c coder.h file_io.c \
 	file_io.h hardware.c hardware.h main.c main.h message.c \
 	message.h mytime.c mytime.h options.c options.h private.h \
-	sandbox.c sandbox.h signals.c signals.h suffix.c suffix.h \
-	util.c util.h ../common/tuklib_open_stdxxx.c \
-	../common/tuklib_progname.c ../common/tuklib_exit.c \
-	../common/tuklib_mbstr_width.c ../common/tuklib_mbstr_fw.c \
-	list.c list.h xz_w32res.rc
+	signals.c signals.h suffix.c suffix.h util.c util.h \
+	../common/tuklib_open_stdxxx.c ../common/tuklib_progname.c \
+	../common/tuklib_exit.c ../common/tuklib_mbstr_width.c \
+	../common/tuklib_mbstr_fw.c list.c list.h xz_w32res.rc
 @COND_MAIN_DECODER_TRUE@am__objects_1 = xz-list.$(OBJEXT)
 @COND_W32_TRUE@am__objects_2 = xz_w32res.$(OBJEXT)
 am_xz_OBJECTS = xz-args.$(OBJEXT) xz-coder.$(OBJEXT) \
 	xz-file_io.$(OBJEXT) xz-hardware.$(OBJEXT) xz-main.$(OBJEXT) \
 	xz-message.$(OBJEXT) xz-mytime.$(OBJEXT) xz-options.$(OBJEXT) \
-	xz-sandbox.$(OBJEXT) xz-signals.$(OBJEXT) xz-suffix.$(OBJEXT) \
-	xz-util.$(OBJEXT) xz-tuklib_open_stdxxx.$(OBJEXT) \
-	xz-tuklib_progname.$(OBJEXT) xz-tuklib_exit.$(OBJEXT) \
-	xz-tuklib_mbstr_width.$(OBJEXT) xz-tuklib_mbstr_fw.$(OBJEXT) \
-	$(am__objects_1) $(am__objects_2)
+	xz-signals.$(OBJEXT) xz-suffix.$(OBJEXT) xz-util.$(OBJEXT) \
+	xz-tuklib_open_stdxxx.$(OBJEXT) xz-tuklib_progname.$(OBJEXT) \
+	xz-tuklib_exit.$(OBJEXT) xz-tuklib_mbstr_width.$(OBJEXT) \
+	xz-tuklib_mbstr_fw.$(OBJEXT) $(am__objects_1) $(am__objects_2)
 xz_OBJECTS = $(am_xz_OBJECTS)
 am__DEPENDENCIES_1 =
 xz_DEPENDENCIES = $(top_builddir)/src/liblzma/liblzma.la \
@@ -169,9 +166,8 @@ am__depfiles_remade = ./$(DEPDIR)/xz-args.Po ./$(DEPDIR)/xz-coder.Po \
 	./$(DEPDIR)/xz-file_io.Po ./$(DEPDIR)/xz-hardware.Po \
 	./$(DEPDIR)/xz-list.Po ./$(DEPDIR)/xz-main.Po \
 	./$(DEPDIR)/xz-message.Po ./$(DEPDIR)/xz-mytime.Po \
-	./$(DEPDIR)/xz-options.Po ./$(DEPDIR)/xz-sandbox.Po \
-	./$(DEPDIR)/xz-signals.Po ./$(DEPDIR)/xz-suffix.Po \
-	./$(DEPDIR)/xz-tuklib_exit.Po \
+	./$(DEPDIR)/xz-options.Po ./$(DEPDIR)/xz-signals.Po \
+	./$(DEPDIR)/xz-suffix.Po ./$(DEPDIR)/xz-tuklib_exit.Po \
 	./$(DEPDIR)/xz-tuklib_mbstr_fw.Po \
 	./$(DEPDIR)/xz-tuklib_mbstr_width.Po \
 	./$(DEPDIR)/xz-tuklib_open_stdxxx.Po \
@@ -390,8 +386,6 @@ install_sh = @install_sh@
 libdir = @libdir@
 libexecdir = @libexecdir@
 localedir = @localedir@
-localedir_c = @localedir_c@
-localedir_c_make = @localedir_c_make@
 localstatedir = @localstatedir@
 mandir = @mandir@
 mkdir_p = @mkdir_p@
@@ -412,8 +406,8 @@ top_srcdir = @top_srcdir@
 xz = @xz@
 xz_SOURCES = args.c args.h coder.c coder.h file_io.c file_io.h \
 	hardware.c hardware.h main.c main.h message.c message.h \
-	mytime.c mytime.h options.c options.h private.h sandbox.c \
-	sandbox.h signals.c signals.h suffix.c suffix.h util.c util.h \
+	mytime.c mytime.h options.c options.h private.h signals.c \
+	signals.h suffix.c suffix.h util.c util.h \
 	../common/tuklib_open_stdxxx.c ../common/tuklib_progname.c \
 	../common/tuklib_exit.c ../common/tuklib_mbstr_width.c \
 	../common/tuklib_mbstr_fw.c $(am__append_1) $(am__append_2)
@@ -531,7 +525,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xz-message.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xz-mytime.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xz-options.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xz-sandbox.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xz-signals.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xz-suffix.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/xz-tuklib_exit.Po@am__quote@ # am--include-marker
@@ -679,20 +672,6 @@ xz-options.obj: options.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='options.c' object='xz-options.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xz_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o xz-options.obj `if test -f 'options.c'; then $(CYGPATH_W) 'options.c'; else $(CYGPATH_W) '$(srcdir)/options.c'; fi`
-
-xz-sandbox.o: sandbox.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xz_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT xz-sandbox.o -MD -MP -MF $(DEPDIR)/xz-sandbox.Tpo -c -o xz-sandbox.o `test -f 'sandbox.c' || echo '$(srcdir)/'`sandbox.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/xz-sandbox.Tpo $(DEPDIR)/xz-sandbox.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='sandbox.c' object='xz-sandbox.o' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xz_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o xz-sandbox.o `test -f 'sandbox.c' || echo '$(srcdir)/'`sandbox.c
-
-xz-sandbox.obj: sandbox.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xz_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT xz-sandbox.obj -MD -MP -MF $(DEPDIR)/xz-sandbox.Tpo -c -o xz-sandbox.obj `if test -f 'sandbox.c'; then $(CYGPATH_W) 'sandbox.c'; else $(CYGPATH_W) '$(srcdir)/sandbox.c'; fi`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/xz-sandbox.Tpo $(DEPDIR)/xz-sandbox.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='sandbox.c' object='xz-sandbox.obj' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xz_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o xz-sandbox.obj `if test -f 'sandbox.c'; then $(CYGPATH_W) 'sandbox.c'; else $(CYGPATH_W) '$(srcdir)/sandbox.c'; fi`
 
 xz-signals.o: signals.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(xz_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT xz-signals.o -MD -MP -MF $(DEPDIR)/xz-signals.Tpo -c -o xz-signals.o `test -f 'signals.c' || echo '$(srcdir)/'`signals.c
@@ -1004,7 +983,6 @@ distclean: distclean-am
 	-rm -f ./$(DEPDIR)/xz-message.Po
 	-rm -f ./$(DEPDIR)/xz-mytime.Po
 	-rm -f ./$(DEPDIR)/xz-options.Po
-	-rm -f ./$(DEPDIR)/xz-sandbox.Po
 	-rm -f ./$(DEPDIR)/xz-signals.Po
 	-rm -f ./$(DEPDIR)/xz-suffix.Po
 	-rm -f ./$(DEPDIR)/xz-tuklib_exit.Po
@@ -1069,7 +1047,6 @@ maintainer-clean: maintainer-clean-am
 	-rm -f ./$(DEPDIR)/xz-message.Po
 	-rm -f ./$(DEPDIR)/xz-mytime.Po
 	-rm -f ./$(DEPDIR)/xz-options.Po
-	-rm -f ./$(DEPDIR)/xz-sandbox.Po
 	-rm -f ./$(DEPDIR)/xz-signals.Po
 	-rm -f ./$(DEPDIR)/xz-suffix.Po
 	-rm -f ./$(DEPDIR)/xz-tuklib_exit.Po

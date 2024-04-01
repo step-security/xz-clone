@@ -1,5 +1,3 @@
-/* SPDX-License-Identifier: 0BSD */
-
 /**
  * \file        lzma/filter.h
  * \brief       Common filter related types and functions
@@ -8,6 +6,9 @@
 
 /*
  * Author: Lasse Collin
+ *
+ * This file has been put into the public domain.
+ * You can do whatever you want with this file.
  */
 
 #ifndef LZMA_H_INTERNAL

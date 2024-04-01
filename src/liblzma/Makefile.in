@@ -264,16 +264,15 @@ host_triplet = @host@
 subdir = src/liblzma
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/ax_pthread.m4 \
-	$(top_srcdir)/m4/build-to-host.m4 $(top_srcdir)/m4/getopt.m4 \
-	$(top_srcdir)/m4/gettext.m4 $(top_srcdir)/m4/host-cpu-c-abi.m4 \
-	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/intlmacosx.m4 \
-	$(top_srcdir)/m4/lib-ld.m4 $(top_srcdir)/m4/lib-link.m4 \
-	$(top_srcdir)/m4/lib-prefix.m4 $(top_srcdir)/m4/libtool.m4 \
-	$(top_srcdir)/m4/ltoptions.m4 $(top_srcdir)/m4/ltsugar.m4 \
-	$(top_srcdir)/m4/ltversion.m4 $(top_srcdir)/m4/lt~obsolete.m4 \
-	$(top_srcdir)/m4/nls.m4 $(top_srcdir)/m4/po.m4 \
-	$(top_srcdir)/m4/posix-shell.m4 $(top_srcdir)/m4/progtest.m4 \
-	$(top_srcdir)/m4/tuklib_common.m4 \
+	$(top_srcdir)/m4/getopt.m4 $(top_srcdir)/m4/gettext.m4 \
+	$(top_srcdir)/m4/host-cpu-c-abi.m4 $(top_srcdir)/m4/iconv.m4 \
+	$(top_srcdir)/m4/intlmacosx.m4 $(top_srcdir)/m4/lib-ld.m4 \
+	$(top_srcdir)/m4/lib-link.m4 $(top_srcdir)/m4/lib-prefix.m4 \
+	$(top_srcdir)/m4/libtool.m4 $(top_srcdir)/m4/ltoptions.m4 \
+	$(top_srcdir)/m4/ltsugar.m4 $(top_srcdir)/m4/ltversion.m4 \
+	$(top_srcdir)/m4/lt~obsolete.m4 $(top_srcdir)/m4/nls.m4 \
+	$(top_srcdir)/m4/po.m4 $(top_srcdir)/m4/posix-shell.m4 \
+	$(top_srcdir)/m4/progtest.m4 $(top_srcdir)/m4/tuklib_common.m4 \
 	$(top_srcdir)/m4/tuklib_cpucores.m4 \
 	$(top_srcdir)/m4/tuklib_integer.m4 \
 	$(top_srcdir)/m4/tuklib_mbstr.m4 \
@@ -350,8 +349,8 @@ am__liblzma_la_SOURCES_DIST = ../common/tuklib_physmem.c \
 	common/vli_decoder.c common/stream_decoder_mt.c \
 	common/microlzma_decoder.c common/lzip_decoder.c \
 	common/lzip_decoder.h check/check.c check/check.h \
-	check/crc_common.h check/crc_x86_clmul.h check/crc32_arm64.h \
-	check/crc32_small.c check/crc32_table.c check/crc32_table_le.h \
+	check/crc_common.h check/crc_x86_clmul.h check/crc32_small.c \
+	check/crc32_table.c check/crc32_table_le.h \
 	check/crc32_table_be.h check/crc32_x86.S check/crc32_fast.c \
 	check/crc64_small.c check/crc64_table.c check/crc64_table_le.h \
 	check/crc64_table_be.h check/crc64_x86.S check/crc64_fast.c \
@@ -823,8 +822,6 @@ install_sh = @install_sh@
 libdir = @libdir@
 libexecdir = @libexecdir@
 localedir = @localedir@
-localedir_c = @localedir_c@
-localedir_c_make = @localedir_c_make@
 localstatedir = @localstatedir@
 mandir = @mandir@
 mkdir_p = @mkdir_p@
@@ -860,19 +857,19 @@ liblzma_la_SOURCES = ../common/tuklib_physmem.c $(am__append_3) \
 	$(am__append_5) $(am__append_6) $(am__append_7) \
 	$(am__append_8) $(am__append_9) $(am__append_10) \
 	$(am__append_11) check/check.c check/check.h \
-	check/crc_common.h check/crc_x86_clmul.h check/crc32_arm64.h \
-	$(am__append_12) $(am__append_13) $(am__append_14) \
-	$(am__append_15) $(am__append_16) $(am__append_17) \
-	$(am__append_18) $(am__append_19) $(am__append_20) \
-	$(am__append_21) $(am__append_22) $(am__append_24) \
-	$(am__append_25) $(am__append_26) $(am__append_27) \
-	$(am__append_28) $(am__append_29) $(am__append_30) \
-	$(am__append_31) $(am__append_32) $(am__append_33) \
-	$(am__append_34) $(am__append_35) $(am__append_36) \
-	$(am__append_37) $(am__append_38) $(am__append_39) \
-	$(am__append_40) $(am__append_41) $(am__append_42) \
-	$(am__append_43) $(am__append_44) $(am__append_45) \
-	$(am__append_46) $(am__append_48)
+	check/crc_common.h check/crc_x86_clmul.h $(am__append_12) \
+	$(am__append_13) $(am__append_14) $(am__append_15) \
+	$(am__append_16) $(am__append_17) $(am__append_18) \
+	$(am__append_19) $(am__append_20) $(am__append_21) \
+	$(am__append_22) $(am__append_24) $(am__append_25) \
+	$(am__append_26) $(am__append_27) $(am__append_28) \
+	$(am__append_29) $(am__append_30) $(am__append_31) \
+	$(am__append_32) $(am__append_33) $(am__append_34) \
+	$(am__append_35) $(am__append_36) $(am__append_37) \
+	$(am__append_38) $(am__append_39) $(am__append_40) \
+	$(am__append_41) $(am__append_42) $(am__append_43) \
+	$(am__append_44) $(am__append_45) $(am__append_46) \
+	$(am__append_48)
 liblzma_la_CPPFLAGS = \
 	-I$(top_srcdir)/src/liblzma/api \
 	-I$(top_srcdir)/src/liblzma/common \
@@ -885,7 +882,7 @@ liblzma_la_CPPFLAGS = \
 	-I$(top_srcdir)/src/common \
 	-DTUKLIB_SYMBOL_PREFIX=lzma_
 
-liblzma_la_LDFLAGS = -no-undefined -version-info 11:1:6 \
+liblzma_la_LDFLAGS = -no-undefined -version-info 10:99:5 \
 	$(am__append_1) $(am__append_2) $(am__append_49)
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = liblzma.pc

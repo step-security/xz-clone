@@ -1,6 +1,3 @@
-# SPDX-License-Identifier: 0BSD
-
-#############################################################################
 #
 # SYNOPSIS
 #
@@ -18,11 +15,13 @@
 #   functions, but each function is put into a separate .c file so
 #   that it is possible to pick only what is strictly needed.
 #
-#############################################################################
+# COPYING
 #
-# Author: Lasse Collin
+#   Author: Lasse Collin
 #
-#############################################################################
+#   This file has been put into the public domain.
+#   You can do whatever you want with this file.
+#
 
 AC_DEFUN_ONCE([TUKLIB_MBSTR], [
 AC_REQUIRE([TUKLIB_COMMON])

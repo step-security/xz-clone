@@ -1,5 +1,3 @@
-/* SPDX-License-Identifier: LGPL-2.1-or-later */
-
 /* getopt-on-non-glibc compatibility macros.
    Copyright (C) 1989-2023 Free Software Foundation, Inc.
    This file is part of gnulib.

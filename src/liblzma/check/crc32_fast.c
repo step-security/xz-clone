@@ -1,5 +1,3 @@
-// SPDX-License-Identifier: 0BSD
-
 ///////////////////////////////////////////////////////////////////////////////
 //
 /// \file       crc32.c
@@ -9,20 +7,21 @@
 //              Ilya Kurdyukov
 //              Hans Jansen
 //
+//  This file has been put into the public domain.
+//  You can do whatever you want with this file.
+//
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "check.h"
 #include "crc_common.h"
 
-#if defined(CRC_X86_CLMUL)
+#ifdef CRC_X86_CLMUL
 #	define BUILDING_CRC32_CLMUL
 #	include "crc_x86_clmul.h"
-#elif defined(CRC32_ARM64)
-#	include "crc32_arm64.h"
 #endif
 
 
-#ifdef CRC32_GENERIC
+#ifdef CRC_GENERIC
 
 ///////////////////
 // Generic CRC32 //
@@ -88,7 +87,7 @@ crc32_generic(const uint8_t *buf, size_t size, uint32_t crc)
 #endif
 
 
-#if defined(CRC32_GENERIC) && defined(CRC32_ARCH_OPTIMIZED)
+#if defined(CRC_GENERIC) && defined(CRC_ARCH_OPTIMIZED)
 
 //////////////////////////
 // Function dispatching //
@@ -127,7 +126,7 @@ typedef uint32_t (*crc32_func_type)(
 // Clang 16.0.0 and older has a bug where it marks the ifunc resolver
 // function as unused since it is static and never used outside of
 // __attribute__((__ifunc__())).
-#if defined(CRC_USE_IFUNC) && defined(__clang__)
+#if defined(HAVE_FUNC_ATTRIBUTE_IFUNC) && defined(__clang__)
 #	pragma GCC diagnostic push
 #	pragma GCC diagnostic ignored "-Wunused-function"
 #endif
@@ -135,8 +134,6 @@ typedef uint32_t (*crc32_func_type)(
 // This resolver is shared between all three dispatch methods. It serves as
 // the ifunc resolver if ifunc is supported, otherwise it is called as a
 // regular function by the constructor or first call resolution methods.
-// The function attributes are needed for safe IFUNC resolver usage with GCC.
-lzma_resolver_attributes
 static crc32_func_type
 crc32_resolve(void)
 {
@@ -144,11 +141,11 @@ crc32_resolve(void)
 			? &crc32_arch_optimized : &crc32_generic;
 }
 
-#if defined(CRC_USE_IFUNC) && defined(__clang__)
+#if defined(HAVE_FUNC_ATTRIBUTE_IFUNC) && defined(__clang__)
 #	pragma GCC diagnostic pop
 #endif
 
-#ifndef CRC_USE_IFUNC
+#ifndef HAVE_FUNC_ATTRIBUTE_IFUNC
 
 #ifdef HAVE_FUNC_ATTRIBUTE_CONSTRUCTOR
 // Constructor method.
@@ -197,7 +194,7 @@ lzma_crc32(const uint8_t *buf, size_t size, uint32_t crc)
 extern LZMA_API(uint32_t)
 lzma_crc32(const uint8_t *buf, size_t size, uint32_t crc)
 {
-#if defined(CRC32_GENERIC) && defined(CRC32_ARCH_OPTIMIZED)
+#if defined(CRC_GENERIC) && defined(CRC_ARCH_OPTIMIZED)
 	// On x86-64, if CLMUL is available, it is the best for non-tiny
 	// inputs, being over twice as fast as the generic slice-by-four
 	// version. However, for size <= 16 it's different. In the extreme
@@ -229,7 +226,7 @@ lzma_crc32(const uint8_t *buf, size_t size, uint32_t crc)
 */
 	return crc32_func(buf, size, crc);
 
-#elif defined(CRC32_ARCH_OPTIMIZED)
+#elif defined(CRC_ARCH_OPTIMIZED)
 	return crc32_arch_optimized(buf, size, crc);
 
 #else

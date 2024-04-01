@@ -1,5 +1,9 @@
-## SPDX-License-Identifier: 0BSD
+##
 ## Author: Lasse Collin
+##
+## This file has been put into the public domain.
+## You can do whatever you want with this file.
+##
 
 # Use -n to prevent gzip from adding a timestamp to the .gz headers.
 GZIP_ENV = -9n
@@ -17,11 +21,11 @@ if COND_DOC
 dist_doc_DATA = \
 	AUTHORS \
 	COPYING \
-	COPYING.0BSD \
 	COPYING.GPLv2 \
 	NEWS \
 	README \
 	THANKS \
+	TODO \
 	doc/faq.txt \
 	doc/history.txt \
 	doc/xz-file-format.txt \
@@ -34,8 +38,12 @@ dist_examples_DATA = \
 	doc/examples/02_decompress.c \
 	doc/examples/03_compress_custom.c \
 	doc/examples/04_compress_easy_mt.c \
-	doc/examples/11_file_info.c \
 	doc/examples/Makefile
+
+examplesolddir = $(docdir)/examples_old
+dist_examplesold_DATA = \
+	doc/examples_old/xz_pipe_comp.c \
+	doc/examples_old/xz_pipe_decomp.c
 
 # Install the Doxygen generated documentation if they were built.
 install-data-local:
@@ -51,25 +59,24 @@ uninstall-local:
 endif
 
 EXTRA_DIST = \
-	cmake \
+	po4a \
+	extra \
+	doc/xz-logo.png \
 	dos \
 	doxygen \
-	extra \
-	po4a \
 	windows \
+	macosx \
+	cmake \
 	CMakeLists.txt \
+	autogen.sh \
 	COPYING.CC-BY-SA-4.0 \
 	COPYING.GPLv2 \
 	COPYING.GPLv3 \
 	COPYING.LGPLv2.1 \
 	INSTALL.generic \
 	PACKAGERS \
-	TODO \
-	autogen.sh \
 	build-aux/manconv.sh \
-	build-aux/version.sh \
-	doc/xz-logo.png \
-	po/xz.pot-header
+	build-aux/version.sh
 
 ACLOCAL_AMFLAGS = -I m4
 
@@ -88,7 +95,7 @@ manfiles = \
 dist-hook:
 	if test -d "$(srcdir)/.git" && type git > /dev/null 2>&1; then \
 		( cd "$(srcdir)" && git log --date=iso --stat \
-			b69da6d4bb6bb11fc0cf066920791990d2b22a06^..HEAD ) \
+			6060f7dc76fd6c2a8a1f8e85d0e4d86bb78273e6^..HEAD ) \
 			> "$(distdir)/ChangeLog"; \
 	fi
 	if type groff > /dev/null 2>&1 && type ps2pdf > /dev/null 2>&1; then \

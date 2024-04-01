@@ -1,9 +1,11 @@
 #!/bin/sh
-# SPDX-License-Identifier: 0BSD
 
 ###############################################################################
 #
 # Author: Lasse Collin
+#
+# This file has been put into the public domain.
+# You can do whatever you want with this file.
 #
 ###############################################################################
 
@@ -146,17 +148,6 @@ if test -z "$XZDEC" || "$XZDEC" -qQ "$I" > /dev/null; then
 	:
 else
 	echo "Unsupported file failed with xzdec -Q: $I"
-	exit 1
-fi
-
-# Test that --single-stream can decompress bad-3-corrupt_lzma2.xz.
-# The first Stream in this file should decompress without errors.
-# This file cannot be decompressed with xzdec.
-I="$srcdir/files/bad-3-corrupt_lzma2.xz"
-if test -z "$XZ" || "$XZ" -dc --single-stream $NO_WARN "$I" > /dev/null; then
-	:
-else
-	echo "Good first Stream failed xz with --single-stream: $I"
 	exit 1
 fi
 

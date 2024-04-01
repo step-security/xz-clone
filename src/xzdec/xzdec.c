@@ -1,11 +1,12 @@
-// SPDX-License-Identifier: 0BSD
-
 ///////////////////////////////////////////////////////////////////////////////
 //
 /// \file       xzdec.c
 /// \brief      Simple single-threaded tool to uncompress .xz or .lzma files
 //
 //  Author:     Lasse Collin
+//
+//  This file has been put into the public domain.
+//  You can do whatever you want with this file.
 //
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -24,14 +25,14 @@
 #	include <sys/capsicum.h>
 #endif
 
-#ifdef HAVE_LINUX_LANDLOCK
+#ifdef HAVE_LINUX_LANDLOCK_H
 #	include <linux/landlock.h>
 #	include <sys/prctl.h>
 #	include <sys/syscall.h>
 #endif
 
 #if defined(HAVE_CAP_RIGHTS_LIMIT) || defined(HAVE_PLEDGE) \
-		|| defined(HAVE_LINUX_LANDLOCK)
+		|| defined(HAVE_LINUX_LANDLOCK_H)
 #	define ENABLE_SANDBOX 1
 #endif
 
@@ -325,7 +326,7 @@ sandbox_enter(int src_fd)
 		goto error;
 
 	(void)src_fd;
-#elif defined(HAVE_LINUX_LANDLOCK)
+#elif defined(HAVE_LINUX_LANDLOCK_H)
 	int landlock_abi = syscall(SYS_landlock_create_ruleset,
 			(void *)NULL, 0, LANDLOCK_CREATE_RULESET_VERSION);
 
@@ -389,7 +390,7 @@ main(int argc, char **argv)
 	}
 #endif
 
-#ifdef HAVE_LINUX_LANDLOCK
+#ifdef HAVE_LINUX_LANDLOCK_H
 	// Prevent the process from gaining new privileges. The return
 	// is ignored to keep compatibility with old kernels.
 	(void)prctl(PR_SET_NO_NEW_PRIVS, 1, 0, 0, 0);

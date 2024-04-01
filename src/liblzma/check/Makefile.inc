@@ -1,6 +1,9 @@
-## SPDX-License-Identifier: 0BSD
+##
 ## Author: Lasse Collin
-
+##
+## This file has been put into the public domain.
+## You can do whatever you want with this file.
+##
 ## Note: There is no check for COND_CHECK_CRC32 because
 ## currently crc32 is always enabled.
 
@@ -12,8 +15,7 @@ liblzma_la_SOURCES += \
 	check/check.c \
 	check/check.h \
 	check/crc_common.h \
-	check/crc_x86_clmul.h \
-	check/crc32_arm64.h
+	check/crc_x86_clmul.h
 
 if COND_SMALL
 liblzma_la_SOURCES += check/crc32_small.c

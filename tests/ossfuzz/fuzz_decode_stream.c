@@ -1,5 +1,3 @@
-// SPDX-License-Identifier: 0BSD
-
 ///////////////////////////////////////////////////////////////////////////////
 //
 /// \file       fuzz_decode_stream.c
@@ -7,6 +5,9 @@
 //
 //  Authors:    Lasse Collin
 //              Maksym Vatsyk
+//
+//  This file has been put into the public domain.
+//  You can do whatever you want with this file.
 //
 ///////////////////////////////////////////////////////////////////////////////
 

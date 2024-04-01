@@ -1,5 +1,3 @@
-// SPDX-License-Identifier: 0BSD
-
 ///////////////////////////////////////////////////////////////////////////////
 //
 /// \file       riscv.c
@@ -17,6 +15,9 @@
 //
 //  Authors:    Lasse Collin
 //              Jia Tan
+//
+//  This file has been put into the public domain.
+//  You can do whatever you want with this file.
 //
 //  Special thanks:
 //
@@ -116,7 +117,7 @@ AUIPC with rd != x0
         Zfh, F, D, and Q:
           * RV32I: LB, LH, LW, LBU, LHU, SB, SH, SW
           * RV64I has also: LD, LWU, SD
-          * Zfh: FLH, FSH
+          * Zhf: FLH, FSH
           * F: FLW, FSW
           * D: FLD, FSD
           * Q: FLQ, FSQ
@@ -320,11 +321,11 @@ AUIPC with rd == x0
 // The left-hand side takes care of (1) and (2).
 //   (a) The lowest 7 bits are already known to be AUIPC so subtracting 0x17
 //       makes those bits zeros.
-//   (b) If AUIPC rd equals x2, subtracting 0x100 makes bits [11:7] zeros.
+//   (b) If AUIPC rd equals x2, subtracting 0x10 makes bits [11:7] zeros.
 //       If rd doesn't equal x2, then there will be at least one non-zero bit
 //       and the next step (c) is irrelevant.
 //   (c) If the lowest two opcode bits of the packed inst2 are set in [13:12],
-//       then subtracting 0x3000 will make those bits zeros. Otherwise there
+//       then subtracting 0x300 will make those bits zeros. Otherwise there
 //       will be at least one non-zero bit.
 //
 // The shift by 18 removes the high bits from the final '>=' comparison and
@@ -511,29 +512,15 @@ riscv_encode(void *simple lzma_attribute((__unused__)),
 				// be the same.
 
 				// Arithmetic right shift makes sign extension
-				// trivial but (1) it's implementation-defined
-				// behavior (C99/C11/C23 6.5.7-p5) and so is
-				// (2) casting unsigned to signed (6.3.1.3-p3).
-				//
-				// One can check for (1) with
-				//
-				//     if ((-1 >> 1) == -1) ...
-				//
-				// but (2) has to be checked from the
-				// compiler docs. GCC promises that (1)
-				// and (2) behave in the common expected
-				// way and thus
-				//
-				//     addr += (uint32_t)(
-				//             (int32_t)inst2 >> 20);
-				//
-				// does the same as the code below. But since
-				// the 100 % portable way is only a few bytes
-				// bigger code and there is no real speed
-				// difference, let's just use that, especially
-				// since the decoder doesn't need this at all.
+				// trivial but C doesn't guarantee it for
+				// signed integers so a fallback is provided
+				// for portability.
 				uint32_t addr = inst & 0xFFFFF000;
-				addr += (inst2 >> 20)
+				if ((-1 >> 1) == -1)
+					addr += (uint32_t)(
+						(int32_t)inst2 >> 20);
+				else
+					addr += (inst2 >> 20)
 						- ((inst2 >> 19) & 0x1000);
 
 				addr += now_pos + (uint32_t)i;

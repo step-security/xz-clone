@@ -1,6 +1,5 @@
 #!/bin/bash
-# SPDX-License-Identifier: 0BSD
-
+#
 #############################################################################
 #
 # 7z2lzma.bash is very primitive .7z to .lzma converter. The input file must
@@ -17,6 +16,9 @@
 #############################################################################
 #
 # Author: Lasse Collin <lasse.collin@tukaani.org>
+#
+# This file has been put into the public domain.
+# You can do whatever you want with this file.
 #
 #############################################################################
 

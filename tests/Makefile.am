@@ -1,5 +1,9 @@
-## SPDX-License-Identifier: 0BSD
+##
 ## Author: Lasse Collin
+##
+## This file has been put into the public domain.
+## You can do whatever you want with this file.
+##
 
 EXTRA_DIST = \
 	files \
@@ -64,11 +68,6 @@ TESTS = \
 	test_compress_generated_abc \
 	test_compress_generated_random \
 	test_compress_generated_text
-
-if COND_MICROLZMA
-check_PROGRAMS += test_microlzma
-TESTS += test_microlzma
-endif
 
 if COND_SCRIPTS
 TESTS += test_scripts.sh

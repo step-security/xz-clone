@@ -1,11 +1,13 @@
-.\" SPDX-License-Identifier: 0BSD
 .\"
 .\" Authors: Andrew Dudman
 .\"          Lasse Collin
 .\"
+.\" This file has been put into the public domain.
+.\" You can do whatever you want with this file.
+.\"
 .\" (Note that this file is not based on gzip's zless.1.)
 .\"
-.TH XZLESS 1 "2024-02-12" "Tukaani" "XZ Utils"
+.TH XZLESS 1 "2010-09-27" "Tukaani" "XZ Utils"
 .SH NAME
 xzless, lzless \- view xz or lzma compressed (text) files
 .SH SYNOPSIS
@@ -17,10 +19,10 @@ xzless, lzless \- view xz or lzma compressed (text) files
 .SH DESCRIPTION
 .B xzless
 is a filter that displays text from compressed files to a terminal.
-Files supported by
+It works on files compressed with
 .BR xz (1)
-are decompressed;
-other files are assumed to be in uncompressed form already.
+or
+.BR lzma (1).
 If no
 .I files
 are given,
