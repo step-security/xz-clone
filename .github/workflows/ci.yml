@@ -88,5 +88,5 @@ jobs:
         if: ${{ matrix.os == 'ubuntu-latest' && matrix.build_system == 'autotools' }}
         run: sudo ./configure
 
-      - name: Print content of config.status
-        run: cat config.status
+      - name: Print content of makefile
+        run: cat src/liblzma/Makefile
