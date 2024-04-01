@@ -1,0 +1,31 @@
+From: Chien Wong <m@xv97.com>
+Date: Sun, 25 Feb 2024 21:38:13 +0800
+Subject: xz: Add missing RISC-V on the filter list in the man page
+
+Signed-off-by: Chien Wong <m@xv97.com>
+---
+ src/xz/xz.1 | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/src/xz/xz.1 b/src/xz/xz.1
+index 6c8a52f..6c34062 100644
+--- a/src/xz/xz.1
++++ b/src/xz/xz.1
+@@ -4,7 +4,7 @@
+ .\" Authors: Lasse Collin
+ .\"          Jia Tan
+ .\"
+-.TH XZ 1 "2024-02-13" "Tukaani" "XZ Utils"
++.TH XZ 1 "2024-02-25" "Tukaani" "XZ Utils"
+ .
+ .SH NAME
+ xz, unxz, xzcat, lzma, unlzma, lzcat \- Compress or decompress .xz and .lzma files
+@@ -1812,6 +1812,8 @@ and
+ \fB\-\-ia64\fR[\fB=\fIoptions\fR]
+ .TP
+ \fB\-\-sparc\fR[\fB=\fIoptions\fR]
++.TP
++\fB\-\-riscv\fR[\fB=\fIoptions\fR]
+ .PD
+ Add a branch/call/jump (BCJ) filter to the filter chain.
+ These filters can be used only as a non-last filter

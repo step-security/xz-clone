@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xz 5.2.4\n"
 "Report-Msgid-Bugs-To: xz@tukaani.org\n"
-"POT-Creation-Date: 2024-03-09 16:17+0800\n"
+"POT-Creation-Date: 2024-02-24 16:31+0800\n"
 "PO-Revision-Date: 2019-09-27 08:08+0100\n"
 "Last-Translator: Pedro Albuquerque <palbuquerque73@gmail.com>\n"
 "Language-Team: Portuguese <translation-team-pt@lists.sourceforge.net>\n"
@@ -57,8 +57,8 @@ msgstr "Só pode especificar um ficheiro com \"--files\" ou \"--files0\"."
 #. TRANSLATORS: This is a translatable
 #. string because French needs a space
 #. before the colon ("%s : %s").
-#: src/xz/args.c:621 src/xz/coder.c:1068 src/xz/coder.c:1084
-#: src/xz/coder.c:1384 src/xz/coder.c:1387 src/xz/file_io.c:518
+#: src/xz/args.c:621 src/xz/coder.c:1058 src/xz/coder.c:1074
+#: src/xz/coder.c:1374 src/xz/coder.c:1377 src/xz/file_io.c:518
 #: src/xz/file_io.c:592 src/xz/file_io.c:682 src/xz/file_io.c:854
 #: src/xz/list.c:368 src/xz/list.c:414 src/xz/list.c:476 src/xz/list.c:590
 #: src/xz/list.c:599
@@ -158,35 +158,35 @@ msgstr "Opções de filtro ou cadeia de filtros não suportadas"
 msgid "Decompression will need %s MiB of memory."
 msgstr "A descompressão precisará de %s MiB de memória."
 
-#: src/xz/coder.c:591
+#: src/xz/coder.c:584
 #, fuzzy, c-format
 #| msgid "Adjusted the number of threads from %s to %s to not exceed the memory usage limit of %s MiB"
 msgid "Reduced the number of threads from %s to %s to not exceed the memory usage limit of %s MiB"
 msgstr "Ajustado o número de linhas de %s de %s para não exceder o limite de uso de memória de %s MiB"
 
-#: src/xz/coder.c:614
+#: src/xz/coder.c:604
 #, c-format
 msgid "Reduced the number of threads from %s to one. The automatic memory usage limit of %s MiB is still being exceeded. %s MiB of memory is required. Continuing anyway."
 msgstr ""
 
-#: src/xz/coder.c:641
+#: src/xz/coder.c:631
 #, fuzzy, c-format
 #| msgid "Adjusted the number of threads from %s to %s to not exceed the memory usage limit of %s MiB"
 msgid "Switching to single-threaded mode to not exceed the memory usage limit of %s MiB"
 msgstr "Ajustado o número de linhas de %s de %s para não exceder o limite de uso de memória de %s MiB"
 
-#: src/xz/coder.c:766
+#: src/xz/coder.c:756
 #, c-format
 msgid "Adjusted LZMA%c dictionary size from %s MiB to %s MiB to not exceed the memory usage limit of %s MiB"
 msgstr "Ajustado o tamanho de dicionário de LZMA%c de %s MiB para %s MiB para não exceder o limite de uso de memória de %s MiB"
 
-#: src/xz/coder.c:776
+#: src/xz/coder.c:766
 #, fuzzy, c-format
 #| msgid "Adjusted LZMA%c dictionary size from %s MiB to %s MiB to not exceed the memory usage limit of %s MiB"
 msgid "Adjusted LZMA%c dictionary size for --filters%u from %s MiB to %s MiB to not exceed the memory usage limit of %s MiB"
 msgstr "Ajustado o tamanho de dicionário de LZMA%c de %s MiB para %s MiB para não exceder o limite de uso de memória de %s MiB"
 
-#: src/xz/coder.c:1150
+#: src/xz/coder.c:1140
 #, fuzzy, c-format
 #| msgid "Error creating a pipe: %s"
 msgid "Error changing to filter chain %u: %s"

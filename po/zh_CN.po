@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xz 5.6.0-pre1\n"
 "Report-Msgid-Bugs-To: xz@tukaani.org\n"
-"POT-Creation-Date: 2024-03-09 16:17+0800\n"
+"POT-Creation-Date: 2024-02-24 16:31+0800\n"
 "PO-Revision-Date: 2024-02-05 15:15-0500\n"
 "Last-Translator: Boyuan Yang <073plan@gmail.com>\n"
 "Language-Team: Chinese (simplified) <i18n-zh@googlegroups.com>\n"
@@ -55,8 +55,8 @@ msgstr "仅可使用 '--files' 或 '--files0' 指定单个文件。"
 #. TRANSLATORS: This is a translatable
 #. string because French needs a space
 #. before the colon ("%s : %s").
-#: src/xz/args.c:621 src/xz/coder.c:1068 src/xz/coder.c:1084
-#: src/xz/coder.c:1384 src/xz/coder.c:1387 src/xz/file_io.c:518
+#: src/xz/args.c:621 src/xz/coder.c:1058 src/xz/coder.c:1074
+#: src/xz/coder.c:1374 src/xz/coder.c:1377 src/xz/file_io.c:518
 #: src/xz/file_io.c:592 src/xz/file_io.c:682 src/xz/file_io.c:854
 #: src/xz/list.c:368 src/xz/list.c:414 src/xz/list.c:476 src/xz/list.c:590
 #: src/xz/list.c:599
@@ -151,33 +151,33 @@ msgstr "不支持的过滤器链或过滤器选项"
 msgid "Decompression will need %s MiB of memory."
 msgstr "解压缩需要 %s MiB 的内存。"
 
-#: src/xz/coder.c:591
+#: src/xz/coder.c:584
 #, c-format
 msgid "Reduced the number of threads from %s to %s to not exceed the memory usage limit of %s MiB"
 msgstr "已将所使用的线程数从 %s 减小为 %s，以不超出 %s MiB 的内存用量限制"
 
-#: src/xz/coder.c:614
+#: src/xz/coder.c:604
 #, c-format
 msgid "Reduced the number of threads from %s to one. The automatic memory usage limit of %s MiB is still being exceeded. %s MiB of memory is required. Continuing anyway."
 msgstr "已将所使用的线程数从 %s 减小为 1。这仍然超出了自动的内存使用限制 %s MiB。需要 %s MiB 的内存。继续操作。"
 
-#: src/xz/coder.c:641
+#: src/xz/coder.c:631
 #, c-format
 msgid "Switching to single-threaded mode to not exceed the memory usage limit of %s MiB"
 msgstr "正在切换到单线程模式以不超出 %s MiB 的内存用量限制"
 
-#: src/xz/coder.c:766
+#: src/xz/coder.c:756
 #, c-format
 msgid "Adjusted LZMA%c dictionary size from %s MiB to %s MiB to not exceed the memory usage limit of %s MiB"
 msgstr "已调整 LZMA%c 字典大小（从 %s MiB 调整为 %s MiB），以不超出 %s MiB 的内存用量限制"
 
-#: src/xz/coder.c:776
+#: src/xz/coder.c:766
 #, fuzzy, c-format
 #| msgid "Adjusted LZMA%c dictionary size from %s MiB to %s MiB to not exceed the memory usage limit of %s MiB"
 msgid "Adjusted LZMA%c dictionary size for --filters%u from %s MiB to %s MiB to not exceed the memory usage limit of %s MiB"
 msgstr "已调整 LZMA%c 字典大小（从 %s MiB 调整为 %s MiB），以不超出 %s MiB 的内存用量限制"
 
-#: src/xz/coder.c:1150
+#: src/xz/coder.c:1140
 #, c-format
 msgid "Error changing to filter chain %u: %s"
 msgstr "更改为过滤器链 %u 时出错：%s"

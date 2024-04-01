@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xz 5.6.0-pre2\n"
 "Report-Msgid-Bugs-To: xz@tukaani.org\n"
-"POT-Creation-Date: 2024-03-09 16:17+0800\n"
+"POT-Creation-Date: 2024-02-24 16:31+0800\n"
 "PO-Revision-Date: 2024-02-24 10:23+0700\n"
 "Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
 "Language-Team: Vietnamese <translation-team-vi@lists.sourceforge.net>\n"
@@ -57,8 +57,8 @@ msgstr "Chỉ được đưa ra một tập tin cho “--files” hay “--files
 #. TRANSLATORS: This is a translatable
 #. string because French needs a space
 #. before the colon ("%s : %s").
-#: src/xz/args.c:621 src/xz/coder.c:1068 src/xz/coder.c:1084
-#: src/xz/coder.c:1384 src/xz/coder.c:1387 src/xz/file_io.c:518
+#: src/xz/args.c:621 src/xz/coder.c:1058 src/xz/coder.c:1074
+#: src/xz/coder.c:1374 src/xz/coder.c:1377 src/xz/file_io.c:518
 #: src/xz/file_io.c:592 src/xz/file_io.c:682 src/xz/file_io.c:854
 #: src/xz/list.c:368 src/xz/list.c:414 src/xz/list.c:476 src/xz/list.c:590
 #: src/xz/list.c:599
@@ -153,32 +153,32 @@ msgstr "Không hỗ trợ lọc móc xích hay tùy chọn lọc"
 msgid "Decompression will need %s MiB of memory."
 msgstr "Giải nén sẽ cần %s MiB bộ nhớ."
 
-#: src/xz/coder.c:591
+#: src/xz/coder.c:584
 #, c-format
 msgid "Reduced the number of threads from %s to %s to not exceed the memory usage limit of %s MiB"
 msgstr "Đã giảm số lượng tuyến trình từ %s xuống %s để không vượt quá giới hạn sử dụng bộ nhớ là %s MiB"
 
-#: src/xz/coder.c:614
+#: src/xz/coder.c:604
 #, c-format
 msgid "Reduced the number of threads from %s to one. The automatic memory usage limit of %s MiB is still being exceeded. %s MiB of memory is required. Continuing anyway."
 msgstr "Đã giảm số lượng tuyến trình từ %s xuống còn một. Giới hạn sử dụng bộ nhớ tự động %s MiB vẫn đang bị vượt quá. Cần có %s MiB bộ nhớ. Vẫn tiếp tục."
 
-#: src/xz/coder.c:641
+#: src/xz/coder.c:631
 #, c-format
 msgid "Switching to single-threaded mode to not exceed the memory usage limit of %s MiB"
 msgstr "Chuyển sang chế độ đơn tuyến trình để không vượt quá giới hạn sử dụng bộ nhớ là %sMiB"
 
-#: src/xz/coder.c:766
+#: src/xz/coder.c:756
 #, c-format
 msgid "Adjusted LZMA%c dictionary size from %s MiB to %s MiB to not exceed the memory usage limit of %s MiB"
 msgstr "Chỉnh cỡ từ điển LZMA%c từ %s MiB thành %s MiB để không vượt quá giới hạn tiêu dùng bộ nhớ là %s MiB"
 
-#: src/xz/coder.c:776
+#: src/xz/coder.c:766
 #, c-format
 msgid "Adjusted LZMA%c dictionary size for --filters%u from %s MiB to %s MiB to not exceed the memory usage limit of %s MiB"
 msgstr "Chỉnh cỡ từ điển LZMA%c cho --filters%u từ %s MiB thành %s MiB để không vượt quá giới hạn tiêu dùng bộ nhớ là %s MiB"
 
-#: src/xz/coder.c:1150
+#: src/xz/coder.c:1140
 #, c-format
 msgid "Error changing to filter chain %u: %s"
 msgstr "Gặp lỗi thay đổi chuỗi móc xích lọc %u: %s"

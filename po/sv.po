@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xz 5.6.0-pre2\n"
 "Report-Msgid-Bugs-To: xz@tukaani.org\n"
-"POT-Creation-Date: 2024-03-09 16:17+0800\n"
+"POT-Creation-Date: 2024-02-24 16:31+0800\n"
 "PO-Revision-Date: 2024-02-15 21:37+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -61,8 +61,8 @@ msgstr "Endast en fil kan anges med ”--files” eller ”--files0”."
 #. TRANSLATORS: This is a translatable
 #. string because French needs a space
 #. before the colon ("%s : %s").
-#: src/xz/args.c:621 src/xz/coder.c:1068 src/xz/coder.c:1084
-#: src/xz/coder.c:1384 src/xz/coder.c:1387 src/xz/file_io.c:518
+#: src/xz/args.c:621 src/xz/coder.c:1058 src/xz/coder.c:1074
+#: src/xz/coder.c:1374 src/xz/coder.c:1377 src/xz/file_io.c:518
 #: src/xz/file_io.c:592 src/xz/file_io.c:682 src/xz/file_io.c:854
 #: src/xz/list.c:368 src/xz/list.c:414 src/xz/list.c:476 src/xz/list.c:590
 #: src/xz/list.c:599
@@ -157,32 +157,32 @@ msgstr "Filterkedja eller filterflaggor stöds inte"
 msgid "Decompression will need %s MiB of memory."
 msgstr "Dekomprimering kommer att kräva %s MiB minne."
 
-#: src/xz/coder.c:591
+#: src/xz/coder.c:584
 #, c-format
 msgid "Reduced the number of threads from %s to %s to not exceed the memory usage limit of %s MiB"
 msgstr "Reducerade antalet trådar från %s till %s för att inte överstiga begränsningen av minnesanvändning på %s MiB"
 
-#: src/xz/coder.c:614
+#: src/xz/coder.c:604
 #, c-format
 msgid "Reduced the number of threads from %s to one. The automatic memory usage limit of %s MiB is still being exceeded. %s MiB of memory is required. Continuing anyway."
 msgstr "Reducerade antalet trådar från %s till en. Den automatiska minnesanvändningsgränsen på %s MiB överskrids fortfarande. %s MiB minne krävs. Fortsätter i alla fall."
 
-#: src/xz/coder.c:641
+#: src/xz/coder.c:631
 #, c-format
 msgid "Switching to single-threaded mode to not exceed the memory usage limit of %s MiB"
 msgstr "Ändrar till enkeltrådat läge för att inte överskrida minnesanvändningsgränsen på %s MiB"
 
-#: src/xz/coder.c:766
+#: src/xz/coder.c:756
 #, c-format
 msgid "Adjusted LZMA%c dictionary size from %s MiB to %s MiB to not exceed the memory usage limit of %s MiB"
 msgstr "Justerade storlek för LZMA%c-lexikon från %s MiB till %s MiB för att inte överstiga begränsningen av minnesanvändning på %s MiB"
 
-#: src/xz/coder.c:776
+#: src/xz/coder.c:766
 #, c-format
 msgid "Adjusted LZMA%c dictionary size for --filters%u from %s MiB to %s MiB to not exceed the memory usage limit of %s MiB"
 msgstr "Justerade storlek för LZMA%c-lexikon för --filters%u från %s MiB till %s MiB för att inte överskrida minnesanvändningsgränsen på %s MiB"
 
-#: src/xz/coder.c:1150
+#: src/xz/coder.c:1140
 #, c-format
 msgid "Error changing to filter chain %u: %s"
 msgstr "Fel vid ändring till filterkedja %u: %s"

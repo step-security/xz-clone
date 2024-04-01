@@ -189,9 +189,8 @@
 /* Define to 1 if you have the <limits.h> header file. */
 #undef HAVE_LIMITS_H
 
-/* Define to 1 if Linux Landlock is supported. See configure.ac for details.
-   */
-#undef HAVE_LINUX_LANDLOCK
+/* Define to 1 if you have the <linux/landlock.h> header file. */
+#undef HAVE_LINUX_LANDLOCK_H
 
 /* Define to 1 if .lz (lzip) decompression support is enabled. */
 #undef HAVE_LZIP_DECODER
@@ -213,6 +212,9 @@
 
 /* Define to 1 to enable hc4 match finder. */
 #undef HAVE_MF_HC4
+
+/* Define to 1 if MicroLZMA support is enabled. */
+#undef HAVE_MICROLZMA
 
 /* Define to 1 if you have the <minix/config.h> header file. */
 #undef HAVE_MINIX_CONFIG_H

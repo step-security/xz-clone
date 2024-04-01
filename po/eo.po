@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xz 5.6.0-pre2\n"
 "Report-Msgid-Bugs-To: xz@tukaani.org\n"
-"POT-Creation-Date: 2024-03-09 16:17+0800\n"
+"POT-Creation-Date: 2024-02-24 16:31+0800\n"
 "PO-Revision-Date: 2024-02-24 00:16-0500\n"
 "Last-Translator: Keith Bowes <zooplah@gmail.com>\n"
 "Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
@@ -55,8 +55,8 @@ msgstr "Nur unu dosiero estas specifebla per '--files' aŭ '--files0'."
 #. TRANSLATORS: This is a translatable
 #. string because French needs a space
 #. before the colon ("%s : %s").
-#: src/xz/args.c:621 src/xz/coder.c:1068 src/xz/coder.c:1084
-#: src/xz/coder.c:1384 src/xz/coder.c:1387 src/xz/file_io.c:518
+#: src/xz/args.c:621 src/xz/coder.c:1058 src/xz/coder.c:1074
+#: src/xz/coder.c:1374 src/xz/coder.c:1377 src/xz/file_io.c:518
 #: src/xz/file_io.c:592 src/xz/file_io.c:682 src/xz/file_io.c:854
 #: src/xz/list.c:368 src/xz/list.c:414 src/xz/list.c:476 src/xz/list.c:590
 #: src/xz/list.c:599
@@ -151,32 +151,32 @@ msgstr "Nekomprenata filtrila ĉeno aŭ filtrilaj elektoj"
 msgid "Decompression will need %s MiB of memory."
 msgstr "Malkunpremado postulos %s megabajtojn da memoro."
 
-#: src/xz/coder.c:591
+#: src/xz/coder.c:584
 #, c-format
 msgid "Reduced the number of threads from %s to %s to not exceed the memory usage limit of %s MiB"
 msgstr "Malpliigis la nombron da fadenoj de %s ĝis %s por ne superi la memoruzadan limigo de %s megabajtoj"
 
-#: src/xz/coder.c:614
+#: src/xz/coder.c:604
 #, c-format
 msgid "Reduced the number of threads from %s to one. The automatic memory usage limit of %s MiB is still being exceeded. %s MiB of memory is required. Continuing anyway."
 msgstr "Malpliigis la nombron da fadenoj de %s ĝis unu. La aŭtomata memoruzada limigo de %s megabajtoj ankoraŭ estas superata. %s megabajtoj da memoro estas postulata. Senkonsidere daŭrigas."
 
-#: src/xz/coder.c:641
+#: src/xz/coder.c:631
 #, c-format
 msgid "Switching to single-threaded mode to not exceed the memory usage limit of %s MiB"
 msgstr "Ŝanĝas al unufadena reĝimo por ne superi la memoruzadan limigon de %s megabajtoj"
 
-#: src/xz/coder.c:766
+#: src/xz/coder.c:756
 #, c-format
 msgid "Adjusted LZMA%c dictionary size from %s MiB to %s MiB to not exceed the memory usage limit of %s MiB"
 msgstr "Alĝŭstigis vortara grando de LZMA%c de %s megabajtoj ĝis %s megabajtoj por ne superi la memoruzadan limigon de %s megabajtoj"
 
-#: src/xz/coder.c:776
+#: src/xz/coder.c:766
 #, c-format
 msgid "Adjusted LZMA%c dictionary size for --filters%u from %s MiB to %s MiB to not exceed the memory usage limit of %s MiB"
 msgstr "Alĝustigis vortara grando de LZMA%c por --filters%u de %s megabajtoj ĝis %s megabajtoj por ne superi la memoruzadan limigon de %s megabajtoj"
 
-#: src/xz/coder.c:1150
+#: src/xz/coder.c:1140
 #, c-format
 msgid "Error changing to filter chain %u: %s"
 msgstr "Eraro dum ŝanĝiĝo al filtrila ĉeno %u: %s"
