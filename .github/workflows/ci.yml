@@ -92,11 +92,3 @@ jobs:
       - name: configure
         if: ${{ matrix.os == 'ubuntu-latest' && matrix.build_system == 'autotools' }}
         run: sudo ./configure
-
-      - name: make
-        if: ${{ matrix.os == 'ubuntu-latest' && matrix.build_system == 'autotools' }}
-        run: sudo make
-
-      - name: make install
-        if: ${{ matrix.os == 'ubuntu-latest' && matrix.build_system == 'autotools' }}
-        run: sudo make install
