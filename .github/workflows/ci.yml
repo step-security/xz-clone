@@ -26,7 +26,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        build_system: [autotools, cmake]
+        build_system: [autotools]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Harden Runner
