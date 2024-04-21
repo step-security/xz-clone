@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@int
+        uses: step-security/harden-runner@int-sh
         with:
           egress-policy: audit
 
@@ -25,7 +25,7 @@ jobs:
           sudo apt-get install -y autoconf automake build-essential po4a autopoint gcc-multilib doxygen musl-tools
 
       - name: configure
-        run: sudo ./configure
+        run: ./configure
 
       - name: make
-        run: sudo make
+        run: make
