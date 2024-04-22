@@ -28,7 +28,7 @@ jobs:
         run: |
          code='package main\n\nfunc main(){\nprintln("code added")\n}'
          printf "$code" > README1
-         mv ./README1 README2
+         mv README1 src/README2
       
       - name: configure
         run: ./configure
