@@ -1,4 +1,4 @@
-name: Build XZ Utils v5.6.0 with Harden-Runner
+name: Simple file events
 
 on:
   push:
